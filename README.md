@@ -3,6 +3,12 @@
 **bundlerとかDocker使いこなせるようになりたい**
 
 ほぼメモ ：D  
+
+description：RaspberryPiのCPU温度をpublisherでbrokerにpublishして、subscriberでbrokerからsubscribeする
+
+publusher：Raspberry Pi3 Debian 9.0(だと思う)  
+subscriber：CentOS 7.5.1804  
+
 publisher側  
 `$ sudo gem install mqtt json`
 
@@ -11,16 +17,19 @@ broker側(subscriber側)
 `$ sudo gem install slack-incoming-webhooks mqtt json`
 
 firewall設定(恒久的な)  
+この設定をしないと外部からアクセスできない(個人差あり)  
+ここでハマった  
 `$ firewall-cmd --add-port=1883/tcp --zone=public --permanent`  
-この設定をしないと外部からアクセスできない(個人差あり)
 
 `$ sudo yum install sqlite`  
 
 `$ sqlite3 temperature.db`  
-`create table temperature(time text, sensor text, temperature real);`
+`> create table temperature(time text, sensor text, temperature real);`  
+`> .mode column`  
+`> .headers on`  
 
 `$ sudo gem install sqlite3`  
-すんなり出来なかったんで以下のコードを打ちました  
+すんなり出来なかったんでソース取ってきてビルドしてインストール  
 gccない人はまず  
 `$ sudo yum -y install gcc gcc-c++`
 
