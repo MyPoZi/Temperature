@@ -16,7 +16,7 @@ firewall設定(恒久的な)
 
 `$ sudo yum install sqlite`  
 
-`$ sqlite3 temperature.sqlite3`  
+`$ sqlite3 temperature.db`  
 `create table temperature(time text, sensor text, temperature real);`
 
 `$ sudo gem install sqlite3`  
