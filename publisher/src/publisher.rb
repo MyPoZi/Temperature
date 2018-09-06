@@ -4,7 +4,7 @@ require 'date'
 require 'yaml'
 
 SLEEP_TIME = 60
-SENSOR_NAME = 'xxx_cpu_raspi'
+SENSOR_NAME = 'MyPoZi_cpu_raspi'
 
 def division(temperature)
   float_temperature = temperature.to_f.quo(1000)
