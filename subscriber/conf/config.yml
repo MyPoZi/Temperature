@@ -1,0 +1,9 @@
+mqtt_config:
+  server: 'xxx.xxx.xxx.xxx'
+  port: '1883'
+  channel: 'xxx/xxx'
+  keep_alive: 0
+slack_config:
+  webhook_url: 'https://hooks.slack.com/services/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+  channel: '#xxxxxxxxxxxxx'
+  username: 'xxxxxxxxx'
